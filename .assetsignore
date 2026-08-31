@@ -1,0 +1,7 @@
+# Що не потрапляє на хостинг (службові файли й документація)
+.git
+.claude
+.gitignore
+.assetsignore
+wrangler.jsonc
+*.md

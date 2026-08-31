@@ -1,0 +1,9 @@
+{
+  // Статичний сайт без серверного коду: Worker роздає лише файли з каталогу.
+  // Деплой:  npx wrangler deploy
+  "name": "realestate-3d",
+  "compatibility_date": "2026-08-31",
+  "assets": {
+    "directory": "./"
+  }
+}
