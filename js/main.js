@@ -41,21 +41,32 @@
   }, { threshold: 0.14, rootMargin: '0px 0px -8% 0px' });
   $$('.reveal').forEach(el => io.observe(el));
 
-  /* ---------- 3. Слоти відео: показуємо заглушку, поки файлу немає ---------- */
+  /* ---------- 3. Слоти відео: заглушка лежить під відео, доки файлу немає ----------
+     Ніяких таймаутів: повільна мережа не повинна ховати відео, яке ще вантажиться.
+     Заглушку прибирає лише реальна готовність відео, показує — лише реальна помилка. */
   $$('[data-video-slot]').forEach(slot => {
     const video = $('video', slot);
     const fallback = $('[data-slot-fallback]', slot);
     if (!video || !fallback) return;
 
     let settled = false;
-    const ready = () => { if (settled) return; settled = true; fallback.remove(); slot.classList.add('has-video'); };
-    const missing = () => { if (settled) return; settled = true; video.style.display = 'none'; slot.classList.add('no-video'); };
+    const ready = () => {
+      if (settled) return;
+      settled = true;
+      fallback.remove();
+      slot.classList.add('has-video');
+    };
+    const missing = () => {
+      if (settled) return;
+      settled = true;
+      video.hidden = true;
+      slot.classList.add('no-video');
+    };
 
     if (video.readyState >= 1) ready();
-    video.addEventListener('loadedmetadata', ready, { once: true });
+    ['loadedmetadata', 'loadeddata', 'canplay'].forEach(e => video.addEventListener(e, ready, { once: true }));
     video.addEventListener('error', missing);
     $$('source', video).forEach(s => s.addEventListener('error', missing));
-    setTimeout(() => { if (!settled && video.readyState === 0) missing(); }, 2500);
   });
 
   /* ---------- 4. Заглушки фото ---------- */

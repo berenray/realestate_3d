@@ -164,10 +164,14 @@ p:last-child{margin-bottom:0}
 }
 
 /* ---------- слоти медіа (пласкі, без градієнтів) ---------- */
+/* слот-заглушка лежить ПІД відео: видно її, лише доки кадру ще немає
+   (жодних таймаутів у JS — повільна мережа не ховає відео) */
 .media-slot{
-  position:relative;width:100%;height:100%;
+  position:absolute;inset:0;z-index:0;
   background:var(--bg-alt);display:grid;place-items:center;padding:24px;
 }
+[data-video-slot]:not(.hero__media):not(.subhero__media){position:relative}
+[data-video-slot] > video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1}
 .media-slot--dark{background:#161A1F}
 .media-slot__label{max-width:420px;text-align:left;border:1px solid var(--line);padding:20px 22px}
 .media-slot--dark .media-slot__label{border-color:var(--line-dark)}
