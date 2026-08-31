@@ -172,6 +172,8 @@ p:last-child{margin-bottom:0}
 }
 [data-video-slot]:not(.hero__media):not(.subhero__media){position:relative}
 [data-video-slot] > video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1}
+/* поки файл вантажиться — заглушка приглушена, щоб не читалась як помилка */
+[data-video-slot].is-loading > .media-slot .media-slot__label{opacity:.45;transition:opacity .3s var(--ease)}
 .media-slot--dark{background:#161A1F}
 .media-slot__label{max-width:420px;text-align:left;border:1px solid var(--line);padding:20px 22px}
 .media-slot--dark .media-slot__label{border-color:var(--line-dark)}

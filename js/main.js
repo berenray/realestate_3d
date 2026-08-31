@@ -41,15 +41,21 @@
   }, { threshold: 0.14, rootMargin: '0px 0px -8% 0px' });
   $$('.reveal').forEach(el => io.observe(el));
 
-  /* ---------- 3. Слоти відео: заглушка лежить під відео, доки файлу немає ----------
-     Ніяких таймаутів: повільна мережа не повинна ховати відео, яке ще вантажиться.
-     Заглушку прибирає лише реальна готовність відео, показує — лише реальна помилка. */
+  /* ---------- 3. Слоти відео ----------
+     Cloudflare Workers Assets не віддає Range-запити (на `Range:` повертає 200 і
+     файл цілком, без 206). Safari без 206 не програє <video>, а scroll scrub без
+     діапазонів не може перемотуватись. Тому тягнемо файл одним запитом і віддаємо
+     через blob: URL — перемотування стає миттєвим, бо файл уже в пам'яті.
+     Заглушка лежить під відео і зникає лише коли кадр справді готовий. */
   $$('[data-video-slot]').forEach(slot => {
     const video = $('video', slot);
     const fallback = $('[data-slot-fallback]', slot);
     if (!video || !fallback) return;
 
+    const source = $('source', video);
+    const src = source ? source.getAttribute('src') : video.getAttribute('src');
     let settled = false;
+
     const ready = () => {
       if (settled) return;
       settled = true;
@@ -63,10 +69,47 @@
       slot.classList.add('no-video');
     };
 
-    if (video.readyState >= 1) ready();
     ['loadedmetadata', 'loadeddata', 'canplay'].forEach(e => video.addEventListener(e, ready, { once: true }));
     video.addEventListener('error', missing);
-    $$('source', video).forEach(s => s.addEventListener('error', missing));
+
+    if (!src) { missing(); return; }
+
+    // знімаємо нативне джерело до того, як браузер його потягне:
+    // інакше файл качається двічі, а в Safari невдала нативна спроба
+    // ховає відео ще до того, як приїде blob
+    if (source) source.remove();
+    video.removeAttribute('src');
+    video.load();
+
+    const load = () => {
+      slot.classList.add('is-loading');
+      fetch(src)
+        .then(r => { if (!r.ok) throw new Error(String(r.status)); return r.blob(); })
+        .then(blob => {
+          if (source) source.remove();
+          video.src = URL.createObjectURL(blob);
+          video.load();
+          slot.classList.remove('is-loading');
+        })
+        .catch(() => { slot.classList.remove('is-loading'); missing(); });
+    };
+
+    // качаємо, лише коли секція близько до екрана — щоб не тягнути всі відео одразу.
+    // Перевіряємо позицію самі, а не через IntersectionObserver: його виклики
+    // браузер може відкладати, і тоді відео не завантажилось би зовсім.
+    let requested = false;
+    const maybeLoad = () => {
+      if (requested) return;
+      const r = slot.getBoundingClientRect();
+      if (r.top > innerHeight * 2.5 || r.bottom < -innerHeight) return;
+      requested = true;
+      removeEventListener('scroll', maybeLoad);
+      removeEventListener('resize', maybeLoad);
+      load();
+    };
+    addEventListener('scroll', maybeLoad, { passive: true });
+    addEventListener('resize', maybeLoad);
+    maybeLoad();
   });
 
   /* ---------- 4. Заглушки фото ---------- */
