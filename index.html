@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<!-- NDA: макет закритий від індексації до релізу -->
+<meta name="robots" content="noindex,nofollow">
+<title>Марта Коваль — преміальна нерухомість у Києві</title>
+<meta name="description" content="Персональний агент з преміальної нерухомості в Києві: підбір квартир і будинків, супровід угоди під ключ, продаж об'єктів за ринковою ціною. Безкоштовна 15-хвилинна консультація.">
+<meta property="og:title" content="Марта Коваль — преміальна нерухомість у Києві">
+<meta property="og:description" content="Підбір, продаж і супровід угод з преміальною нерухомістю в Києві.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%231C2B3A'/%3E%3Cpath d='M7 17.5 16 9l9 8.5V24h-6v-5h-6v5H7z' fill='%23F7F4EF'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="css/style.css?v=7">
+</head>
+<body>
+
+<!-- ================= НАВІГАЦІЯ ================= -->
+<header class="nav" id="nav">
+  <div class="nav__inner">
+    <a class="nav__brand" href="#top">Марта Коваль <span>Київ</span></a>
+    <nav aria-label="Основна навігація">
+      <ul class="nav__links">
+        <li><a href="#listings">Об'єкти</a></li>
+        <li><a href="neighborhoods.html">Райони</a></li>
+        <li><a href="#testimonials">Відгуки</a></li>
+        <li><a href="#contact">Контакти</a></li>
+      </ul>
+    </nav>
+    <a class="btn" href="#contact">Записатися</a>
+    <button class="nav__burger" id="burger" aria-label="Відкрити меню" aria-expanded="false">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7h18M3 12h18M3 17h18"/></svg>
+    </button>
+  </div>
+</header>
+
+<!-- ================= HERO ================= -->
+<section class="hero scrub" id="top" data-scrub style="height:250vh">
+ <div class="hero__sticky">
+  <div class="hero__media" data-video-slot>
+    <video muted playsinline preload="auto" data-scrub-video poster="assets/img/hero-poster.jpg">
+      <source src="assets/video/hero-aerial.mp4" type="video/mp4">
+    </video>
+    <!-- заглушка зникає автоматично, щойно з'явиться файл відео -->
+    <div class="media-slot media-slot--dark" data-slot-fallback>
+      <div class="media-slot__label">
+        <b>Слот hero-відео</b>
+        <p>Аерозйомка навколо будинку, 8 сек, золота година. Автоплей у циклі, без звуку.</p>
+        <code>assets/video/hero-aerial.mp4</code>
+      </div>
+    </div>
+  </div>
+  <div class="hero__scrim"></div>
+
+  <div class="hero__inner">
+    <p class="hero__meta reveal"><span>Приватний агент</span><span>Київ і передмістя</span><span>з 2013 року</span></p>
+    <h1 class="reveal" data-d="1">Марта Коваль</h1>
+    <p class="hero__tagline reveal" data-d="2">Преміальна нерухомість Києва: підбір, перемовини та супровід угоди до реєстрації права власності.</p>
+    <div class="hero__cta reveal" data-d="3">
+      <a class="btn btn--light" href="#listings">Переглянути об'єкти</a>
+      <a class="btn btn--onDark" href="#contact">Записатися на дзвінок</a>
+    </div>
+  </div>
+  <div class="hero__rule"><span>180+ закритих угод</span><span>Печерськ · Липки · Поділ · Оболонь</span></div>
+  <div class="scrub__progress" data-scrub-progress></div>
+ </div>
+</section>
+
+<!-- ================= ДО / ПІСЛЯ (wipe) ================= -->
+<section class="section" id="result">
+  <div class="wrap">
+    <div class="head">
+      <div class="head__text">
+        <p class="label reveal">Результат</p>
+        <h2 class="reveal" data-d="1">Ділянка на схилі — і дім, який на ній стоїть</h2>
+        <p class="lead reveal" data-d="2">Той самий кадр з висоти: ліворуч — ділянка до робіт, праворуч — готовий об'єкт. Ведіть межу, щоб побачити перехід.</p>
+      </div>
+    </div>
+
+    <figure class="wipe reveal" data-wipe>
+      <img class="wipe__img" src="assets/img/plot-after.jpg" alt="Готовий будинок з басейном на тій самій ділянці">
+      <div class="wipe__before">
+        <img class="wipe__img" src="assets/img/plot-before.jpg" alt="Ділянка на схилі до початку будівництва: зрізаний ґрунт і техніка">
+      </div>
+      <div class="wipe__handle" data-wipe-handle role="slider" tabindex="0"
+           aria-label="Порівняння: ділянка до будівництва і готовий будинок"
+           aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" aria-valuetext="50% — половина кадру «до»">
+        <span class="wipe__grip" aria-hidden="true">
+          <svg viewBox="0 0 24 16" aria-hidden="true"><path d="M9 3 5 8l4 5M15 3l4 5-4 5"/></svg>
+        </span>
+      </div>
+      <figcaption class="wipe__tags">
+        <span class="wipe__tag">До</span>
+        <span class="wipe__tag">Після</span>
+      </figcaption>
+    </figure>
+    <p class="wipe__hint reveal">Ведіть курсором по кадру — або потягніть повзунок. З клавіатури: ← →</p>
+  </div>
+</section>
+
+<!-- ================= ОБ'ЄКТИ ================= -->
+<section class="section" id="listings">
+  <div class="wrap">
+    <div class="head">
+      <div class="head__text">
+        <p class="label reveal">Актуальні пропозиції</p>
+        <h2 class="reveal" data-d="1">Об'єкти в продажу</h2>
+        <p class="lead reveal" data-d="2">Заміські будинки в радіусі 30 хвилин від центру. Кожен об'єкт перевірений особисто: документи, стан будинку, реальна ціна ринку.</p>
+      </div>
+      <a class="link reveal" data-d="3" href="#contact">Підібрати під запит
+        <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 8h12M9 3l5 5-5 5"/></svg>
+      </a>
+    </div>
+
+    <div class="listings">
+      <article class="listing reveal">
+        <div class="listing__media ph" data-ph="Фото об'єкта">
+          <span class="listing__tag">Новий</span>
+          <img src="assets/img/listing-1.jpg" alt="Каркасний будинок із панорамним склінням у Кончі-Заспі" loading="lazy">
+        </div>
+        <p class="listing__price num">$1 250 000</p>
+        <p class="listing__addr">Конча-Заспа, вул. Лісова</p>
+        <p class="listing__specs num"><span><b>4</b> спальні</span><span><b>3</b> санвузли</span><span><b>265</b> м²</span></p>
+      </article>
+
+      <article class="listing reveal" data-d="1">
+        <div class="listing__media ph" data-ph="Фото об'єкта">
+          
+          <img src="assets/img/listing-2.jpg" alt="Мінімалістичний цегляний будинок у Лісниках" loading="lazy">
+        </div>
+        <p class="listing__price num">$610 000</p>
+        <p class="listing__addr">Лісники, закритий квартал</p>
+        <p class="listing__specs num"><span><b>3</b> спальні</span><span><b>2</b> санвузли</span><span><b>180</b> м²</span></p>
+      </article>
+
+      <article class="listing reveal" data-d="2">
+        <div class="listing__media ph" data-ph="Фото об'єкта">
+          <span class="listing__tag">Ексклюзив</span>
+          <img src="assets/img/listing-3.jpg" alt="Будинок з басейном у сині сутінки, Козин" loading="lazy">
+        </div>
+        <p class="listing__price num">$2 100 000</p>
+        <p class="listing__addr">Козин, перша лінія до води</p>
+        <p class="listing__specs num"><span><b>5</b> спалень</span><span><b>4</b> санвузли</span><span><b>430</b> м²</span></p>
+      </article>
+
+      <article class="listing reveal">
+        <div class="listing__media ph" data-ph="Фото об'єкта">
+          
+          <img src="assets/img/listing-4.jpg" alt="Тераса з басейном і видом на долину, Плюти" loading="lazy">
+        </div>
+        <p class="listing__price num">$1 480 000</p>
+        <p class="listing__addr">Плюти, схил над Дніпром</p>
+        <p class="listing__specs num"><span><b>4</b> спальні</span><span><b>3</b> санвузли</span><span><b>320</b> м²</span></p>
+      </article>
+
+      <article class="listing reveal" data-d="1">
+        <div class="listing__media ph" data-ph="Фото об'єкта">
+          
+          <img src="assets/img/listing-5.jpg" alt="Будинок із скляним фронтоном увечері, Романків" loading="lazy">
+        </div>
+        <p class="listing__price num">$980 000</p>
+        <p class="listing__addr">Романків, ліс за парканом</p>
+        <p class="listing__specs num"><span><b>4</b> спальні</span><span><b>3</b> санвузли</span><span><b>290</b> м²</span></p>
+      </article>
+
+      <article class="listing reveal" data-d="2">
+        <div class="listing__media ph" data-ph="Фото об'єкта">
+          <span class="listing__tag">Ексклюзив</span>
+          <img src="assets/img/listing-6.jpg" alt="Цегляний будинок з басейном у сутінках, Віта-Поштова" loading="lazy">
+        </div>
+        <p class="listing__price num">$1 750 000</p>
+        <p class="listing__addr">Віта-Поштова, ділянка 40 соток</p>
+        <p class="listing__specs num"><span><b>6</b> спалень</span><span><b>5</b> санвузлів</span><span><b>520</b> м²</span></p>
+      </article>
+
+    <div class="listings__foot reveal">
+      <p>Ще 14 об'єктів у закритій добірці — надсилаю після короткої розмови.</p>
+      <a class="btn btn--outline" href="#contact">Отримати повну добірку</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SCROLL SCRUB: ОБ'ЄКТ ================= -->
+<section class="scrub" data-scrub style="height:250vh" aria-label="Об'єкт тижня">
+  <div class="scrub__sticky">
+    <div data-video-slot style="position:absolute;inset:0">
+      <video muted playsinline preload="auto" data-scrub-video>
+        <source src="assets/video/twilight-pool.mp4" type="video/mp4">
+      </video>
+      <div class="media-slot media-slot--dark" data-slot-fallback>
+        <div class="media-slot__label">
+          <b>Слот scroll-scrub відео</b>
+          <p>Екстер'єр у сині сутінки, наїзд камери через басейн до будинку. Кадри прокручуються разом зі скролом.</p>
+          <code>assets/video/twilight-pool.mp4</code>
+        </div>
+      </div>
+    </div>
+    <div class="scrub__scrim"></div>
+    <div class="scrub__caption">
+      <div class="scrub__caption-inner">
+        <div>
+          <p class="label" style="margin-bottom:10px">Об'єкт тижня</p>
+          <p class="scrub__price num">$2 100 000</p>
+          <p class="scrub__addr num">Козин · перша лінія до води · 430 м² · 5 спалень</p>
+        </div>
+        <a class="btn btn--onDark" href="#contact">Запросити перегляд</a>
+      </div>
+    </div>
+    <div class="scrub__progress" data-scrub-progress></div>
+  </div>
+</section>
+
+<!-- ================= ВІДГУКИ ================= -->
+<section class="section section--alt" id="testimonials">
+  <div class="wrap">
+    <div class="head">
+      <div class="head__text">
+        <p class="label reveal">Відгуки клієнтів</p>
+        <h2 class="reveal" data-d="1">Що кажуть після угоди</h2>
+      </div>
+      <div class="tst__nav reveal" data-d="2">
+        <button class="arrow" data-tst="prev" aria-label="Попередні відгуки">
+          <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M14 8H2M7 3 2 8l5 5"/></svg>
+        </button>
+        <button class="arrow" data-tst="next" aria-label="Наступні відгуки">
+          <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 8h12M9 3l5 5-5 5"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="tst__track" id="tstTrack">
+      <article class="tst__card">
+        <p class="tst__text">Ми шукали квартиру пів року самостійно і майже здалися. Марта показала чотири варіанти — третій став нашим домом. Усі документи перевірили до того, як ми внесли завдаток.</p>
+        <p class="tst__who"><b>Олена П.</b><span>Покупець</span></p>
+      </article>
+      <article class="tst__card">
+        <p class="tst__text">Продали будинок за 41 день за ціною, у яку я спершу не вірив. Фотограф, відео, покази — усе було організовано без мене, я лише підписав документи.</p>
+        <p class="tst__who"><b>Ігор В.</b><span>Продавець</span></p>
+      </article>
+      <article class="tst__card">
+        <p class="tst__text">Купував як інвестицію, дистанційно з-за кордону. Відеообхід, чесна оцінка орендної дохідності і жодного тиску. За рік об'єкт уже подорожчав.</p>
+        <p class="tst__who"><b>Дмитро К.</b><span>Інвестор</span></p>
+      </article>
+      <article class="tst__card">
+        <p class="tst__text">Найцінніше — це відмови. Нас двічі відмовляли від об'єктів, на яких можна було заробити комісію. Саме тому ми привели батьків і двох друзів.</p>
+        <p class="tst__who"><b>Софія та Андрій Р.</b><span>Покупці</span></p>
+      </article>
+      <article class="tst__card">
+        <p class="tst__text">Складна угода з іпотекою і трьома власниками. Кожен крок пояснювали людською мовою, а не юридичною. Закрилися без жодного перенесення дати.</p>
+        <p class="tst__who"><b>Наталія Б.</b><span>Покупець</span></p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= РАЙОНИ ================= -->
+<section class="section" id="neighborhoods">
+  <div class="wrap">
+    <div class="band">
+      <div class="band__media ph reveal" data-ph="Аерофото району">
+        <img src="assets/img/neighborhoods.jpg" alt="Райони Києва з висоти" loading="lazy">
+      </div>
+      <div>
+        <p class="label reveal">Локальна експертиза</p>
+        <h2 class="reveal" data-d="1">Путівник районами Києва</h2>
+        <p class="lead reveal" data-d="2">Ціна квадратного метра — це наслідок. Спершу район: транспорт, школи, тиша у дворі, плани забудови на наступні п'ять років.</p>
+        <ul class="areas num reveal" data-d="3">
+          <li>Печерськ <span>від $3 900 / м²</span></li>
+          <li>Липки <span>від $3 400 / м²</span></li>
+          <li>Поділ <span>від $2 600 / м²</span></li>
+          <li>Оболонська набережна <span>від $2 200 / м²</span></li>
+        </ul>
+        <a class="btn btn--outline reveal" href="neighborhoods.html">Відкрити путівник</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= КОНТАКТИ ================= -->
+<section class="section section--dark" id="contact">
+  <div class="wrap">
+    <div class="head">
+      <div class="head__text">
+        <p class="label reveal">Контакти</p>
+        <h2 class="reveal" data-d="1">Розкажіть, що шукаєте</h2>
+        <p class="lead reveal" data-d="2">Відповідаю особисто протягом робочого дня. Перша консультація — безкоштовна, без зобов'язань.</p>
+      </div>
+    </div>
+
+    <div class="contact">
+      <form class="form reveal" id="contactForm" novalidate>
+        <div class="form__row">
+          <div class="field">
+            <label for="name">Ім'я</label>
+            <input id="name" name="name" type="text" autocomplete="name" placeholder="Як до вас звертатися" required>
+          </div>
+          <div class="field">
+            <label for="phone">Телефон</label>
+            <input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+380 __ ___ __ __" required>
+          </div>
+        </div>
+        <div class="field">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" inputmode="email" autocomplete="email" placeholder="you@example.com" required>
+        </div>
+        <div class="field">
+          <label for="intent">Ви хочете купити чи продати?</label>
+          <select id="intent" name="intent">
+            <option>Купити</option>
+            <option>Продати</option>
+            <option>Орендувати</option>
+            <option>Інвестувати</option>
+            <option>Поки що просто консультація</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="msg">Коротко про запит</label>
+          <textarea id="msg" name="msg" placeholder="Район, бюджет, кількість кімнат, терміни"></textarea>
+        </div>
+        <button class="btn btn--light btn--wide" type="submit">Надіслати запит</button>
+        <p class="form__note">Дані використовуються лише для зворотного зв'язку.</p>
+        <p class="form__ok" id="formOk" role="status">Дякую, запит отримано. Зв'яжуся з вами найближчим часом.</p>
+      </form>
+
+      <div class="reveal" data-d="1">
+        <dl class="details">
+          <div class="detail"><dt>Телефон</dt><dd class="num"><a href="tel:+380000000000">+380 (00) 000-00-00</a></dd></div>
+          <div class="detail"><dt>Email</dt><dd><a href="mailto:hello@example.com">hello@example.com</a></dd></div>
+          <div class="detail"><dt>Офіс</dt><dd>вул. Прикладна, 1, офіс 12<br>Київ, 01001</dd></div>
+          <div class="detail"><dt>Графік</dt><dd class="num">Пн–Сб, 09:00–20:00</dd></div>
+        </dl>
+        <div class="booking">
+          <p>Не любите форми? Оберіть вільний слот у календарі — 15 хвилин, щоб зрозуміти, чи можу я бути корисною.</p>
+          <a class="btn btn--onDark btn--wide" href="#" data-calendly>Забронювати 15 хвилин</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ФУТЕР ================= -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__top">
+      <p class="num" style="margin:0">© <span id="year">2026</span> Марта Коваль · Нерухомість у Києві</p>
+      <nav aria-label="Футер">
+        <a href="#listings">Об'єкти</a>
+        <a href="neighborhoods.html">Райони</a>
+          <a href="#contact">Контакти</a>
+      </nav>
+    </div>
+    <p class="footer__nda">Демонстраційний макет. Ім'я агента, контактні дані, адреси, ціни та відгуки — вигадані й слугують лише для показу структури сайту. Матеріали проєкту конфіденційні (NDA): не публікувати, не передавати третім особам і не індексувати без письмової згоди замовника.</p>
+  </div>
+</footer>
+
+<script src="js/main.js?v=7"></script>
+</body>
+</html>
